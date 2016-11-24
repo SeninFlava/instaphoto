@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
 
-<nav class="navbar navbar-dark bg-primary">
+<nav class="menu-margins-bottom navbar navbar-dark bg-primary">
   
   <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
 
@@ -15,7 +15,7 @@
 
     <ul class="nav navbar-nav float-xs-right">
       <li class="nav-item">
-		<%= link_to 'О нас', pages_about_path, class: 'nav-link' %>
+		<%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -29,7 +29,7 @@
 
 <% else %>
 
-<nav class="navbar navbar-dark bg-transparent">
+<nav class="menu-margins-bottom navbar navbar-dark bg-transparent">
   
   <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
 

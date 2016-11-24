@@ -6,15 +6,27 @@ $btn-primary-color: #FFF;
 $btn-primary-bg: #19B5FE;
 $navbar-border-radius: 0;
 $nav-link-padding: 100px 200px;
+$card-cap-bg: rgba(255,255,255,0.8);
+$card-bg: rgba(255,255,255,0.7);
 
 @import "bootstrap";
 
+
+.devise-form {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .background-contatiner {
 	width: 100%;
 	height: 100vh;
 	background-size: cover;
 	background-image: url(image_path('background.jpg'))
+}
+
+.menu-margins-bottom {
+	margin-bottom: 2rem;
 }
 
 .container-login {
@@ -24,6 +36,10 @@ $nav-link-padding: 100px 200px;
 
 .bg-transparent {
 	background-color: rgba(155,155,155,0.8);
+}
+
+.card-transparent {
+	background-color: rgba(255,255,255,0.7);
 }
 
 $text-color: green;
@@ -36,6 +52,9 @@ $text-color: green;
 	color: $text-color;
 }
 
+.jumbotron-landing {
+	margin-top: 2rem;
+}
 
 
 .nav-landing:link,
