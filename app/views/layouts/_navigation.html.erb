@@ -1,0 +1,59 @@
+
+<% if user_signed_in? %>
+
+<nav class="navbar navbar-dark bg-primary">
+  
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+  <div class="container">
+  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+     <ul class="nav navbar-nav float-xs-left">
+      <li class="nav-item">
+    	<%= link_to 'Russian Winter Tour 2017', root_path, class: 'nav-link landing-logo text-logo' %>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav float-xs-right">
+      <li class="nav-item">
+		<%= link_to 'О нас', pages_about_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    </ul>
+
+  </div>
+  </div>
+
+</nav>
+
+<% else %>
+
+<nav class="navbar navbar-dark bg-transparent">
+  
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+  <div class="container">
+  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+    
+    <%= link_to 'Russian Winter Tour 2017', root_path, class: 'navbar-brand text-logo landing-logo' %>
+    
+    <ul class="nav navbar-nav float-xs-right">
+      <li class="nav-item">
+		<%= link_to 'О нас', pages_about_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
+      </li>
+    </ul>
+
+  </div>
+  </div>
+  
+</nav>
+
+
+<% end %>
+
+
+
