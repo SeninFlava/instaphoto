@@ -8,18 +8,23 @@ $navbar-border-radius: 0;
 $nav-link-padding: 100px 200px;
 $card-cap-bg: rgba(255,255,255,0.8);
 $card-bg: rgba(255,255,255,0.7);
+$body-bg: #F2F1EF;
 
 @import "bootstrap";
 
 
 .devise-form {
+		text-align: left;
+
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .photo-form {
-	width: 50%;
+	text-align: left;
+
+	display: inline-block;	
 	margin-left: auto;
 	margin-right: auto;	
 }
@@ -36,6 +41,7 @@ $card-bg: rgba(255,255,255,0.7);
 }
 
 .container-login {
+	text-align: center;
 	padding-right:0px;
 	padding-left:0px;
 }
@@ -44,10 +50,12 @@ $card-bg: rgba(255,255,255,0.7);
 	background-color: rgba(155,155,155,0.8);
 }
 
-.bg-grey {
+/*
+   .bg-grey {
 	background-color: #F2F1EF;
 	height: 100vh;
 }
+*/
 
 .card-transparent {
 	background-color: rgba(255,255,255,0.7);

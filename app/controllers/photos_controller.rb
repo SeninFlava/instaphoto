@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+
   before_action :is_user_owner, only: [:edit, :update, :destroy]
 
   # GET /photos
@@ -71,6 +72,6 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:description)
+      params.require(:photo).permit(:description, :image)
     end
 end

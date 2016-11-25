@@ -1,36 +1,29 @@
-<div class="jumbotron">
 
-
-<h1>Listing Photos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Email</th>      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.description %></td>
-        <td><%= photo.user.email unless photo.user.nil? %></td>
+        <div class="card photo-form">
+          <div class="card-header">
+            <%= photo.description %>
+          </div>
+        <div class="card-block">
+        
+        <a href="/photos/<%= photo.id %>">
+          <%= image_tag photo.image.url(:medium) %>
+        </a>
 
-        <td><%= link_to 'Show', photo %></td>
-        <% if photo.user == current_user && user_signed_in? %>
-          <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-          <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
-          <td/>
-          <td/>
-        <% end %>
+          <br/>
+          <%= photo.user.email unless photo.user.nil? %><br/><br/>
 
-      </tr>
+          <%= link_to 'Show', photo %>
+        
+          <% if photo.user == current_user && user_signed_in? %>
+            | <%= link_to 'Edit', edit_photo_path(photo) %>
+            | <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+        </div>
+
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
@@ -38,4 +31,3 @@
   <%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
 <% end %>
 
-</div>>
