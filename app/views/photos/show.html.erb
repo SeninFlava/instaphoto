@@ -1,13 +1,12 @@
 
 <div class="card photo-form">
   <div class="card-header">
-    Фотография
+    <strong><%= @photo.description %></strong>
   </div>
   <div class="card-block">
 
 <p>
   <%= image_tag @photo.image.url(:large) %> <br/>
-  <strong><%= @photo.description %></strong>
   <br>
   <%= @photo.user.email if @photo.user %>
 </p>

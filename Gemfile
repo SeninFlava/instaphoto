@@ -36,6 +36,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'devise', '~> 4.2'
 gem 'paperclip', '~>5.0.0'
 
+gem 'aws-sdk', '~> 2.6'
 
 group :development do
 	# Use sqlite3 as the database for Active Record
