@@ -1,5 +1,19 @@
+<%= @user.id %>
+<%= @user.email %> <br/>
 
-    <% @photos.each do |photo| %>
+<% unless current_user.nil? %>
+<% if current_user.id != @user.id %>
+  
+  <% if current_user.is_friend?(@user) %>
+    <%= link_to "Отписаться", unsubscribe_path(@user.id) %> <br/>
+  <% else %>
+    <%= link_to "Подписаться", subscribe_path(@user.id) %> <br/>
+  <% end %>
+
+<% end %>
+<% end %>
+
+    <% @user.photos.each do |photo| %>
         <div class="card photo-form">
           <div class="card-header">
             <%= photo.description %>
@@ -11,7 +25,7 @@
         </a>
 
           <br/>
-          <%= link_to photo.user.email, profile_path(photo.user) unless photo.user.nil? %><br/><br/>
+          <%= photo.user.email unless photo.user.nil? %><br/><br/>
 
           <%= link_to 'Show', photo %>
         
@@ -25,9 +39,6 @@
     <% end %>
 
 
-<br>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
-<% end %>
+
 

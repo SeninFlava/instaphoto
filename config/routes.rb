@@ -5,6 +5,12 @@ Instaphoto::Application.routes.draw do
   get "pages/landing"
   get "pages/about"
   
+  get 'profiles/:id' => 'profiles#show', as: 'profile'
+
+  get 'profiles/:id/subscribe' => 'profiles#subscribe', as: 'subscribe'
+  get 'profiles/:id/unsubscribe' => 'profiles#unsubscribe', as: 'unsubscribe'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

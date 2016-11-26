@@ -5,4 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :photos
+  has_many :subscriptions
+
+  def is_friend?(other_user)
+  	if self.subscriptions.find_by(friend_id: other_user).nil?
+  		false
+  	else 
+  		true
+  	end
+  end
+
 end
