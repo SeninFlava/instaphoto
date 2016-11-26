@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos =  Photo.all
+    @photos =  Photo.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /photos/1

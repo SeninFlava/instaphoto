@@ -24,13 +24,5 @@
 
     <% end %>
 
-<br>
-
-<%= will_paginate @photos %>
 
 <br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
-<% end %>
-

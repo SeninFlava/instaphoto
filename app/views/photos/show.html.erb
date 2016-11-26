@@ -8,7 +8,7 @@
 <p>
   <%= image_tag @photo.image.url(:large) %> <br/>
   <br>
-  <%= @photo.user.email if @photo.user %>
+  <%= @photo.user.name if @photo.user %>
 </p>
 
 <% if @photo.user == current_user && user_signed_in? %>

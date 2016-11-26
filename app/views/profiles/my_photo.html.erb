@@ -11,7 +11,6 @@
         </a>
 
           <br/>
-          <%= link_to photo.user.name, profile_path(photo.user) unless photo.user.nil? %><br/><br/>
 
           <%= link_to 'Show', photo %>
         
@@ -24,13 +23,9 @@
 
     <% end %>
 
-<br>
-
-<%= will_paginate @photos %>
 
 <br>
 
 <% if user_signed_in? %>
   <%= link_to 'New Photo', new_photo_path, class: "btn btn-primary" %>
 <% end %>
-

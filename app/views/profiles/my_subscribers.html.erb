@@ -1,0 +1,14 @@
+<% if @subscribers.count == 0 %>
+	У вас нет подписок
+<% end %>
+
+<% @subscribers.each do |user| %>
+
+<div class="card photo-form">
+  <div class="card-block">
+    <%= link_to user.name, profile_path(user.id) %> | 
+    <%= link_to "Отписаться", unsubscribe_path(user.id) %> <br/>
+  </div>
+</div>
+
+<% end %>

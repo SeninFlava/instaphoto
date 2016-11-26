@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+
 #gem 'bootstrap-sass', '~> 3.3.5'
 
 #gem 'sass-rails', '>= 3.2'

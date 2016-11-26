@@ -1,0 +1,27 @@
+<% if @users.count == 0 %>
+	Нет пользователей в этой сети
+<% end %>
+
+<% @users.each do |user| %>
+
+<div class="card photo-form">
+  <div class="card-block">
+
+    <%= link_to user.name, profile_path(user.id) %> |
+
+  <% if current_user == user %>
+  	Это вы
+  <% else %>
+	  <% if current_user.is_friend?(user) %>
+	    <%= link_to "Отписаться", unsubscribe_path(user.id) %> 
+	  <% else %>
+	    <%= link_to "Подписаться", subscribe_path(user.id) %> 
+	  <% end %>
+  <% end %>
+
+  </div>
+</div><br>
+
+<% end %>
+
+<%= will_paginate @users %>
