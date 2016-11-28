@@ -78,7 +78,18 @@ Instaphoto::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: 'https://winter-tour.herokuapp.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'winter-tour.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'winter-tour.herokuapp.com',
+  user_name:            ENV.fetch('MAIL_ACCOUNT'),
+  password:             ENV.fetch('MAIL_PASS'),
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
 
   config.paperclip_defaults = {
     storage: :s3,
