@@ -8,21 +8,17 @@
 
   <div class="container">
   <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-     <ul class="nav navbar-nav float-xs-left">
+     
+    <ul class="nav navbar-nav float-xs-left">
       <li class="nav-item">
-    	<%= link_to 'Russian Winter Tour 2017', root_path, class: 'nav-link landing-logo text-logo' %>
+    	  <%= link_to t('logo_title'), root_path, class: 'nav-link landing-logo text-logo' %>
       </li>
-    </ul>
-
-    <ul class="nav navbar-nav float-xs-right">
       <li class="nav-item">
-        <%= link_to "Мои фотографии", profiles_my_photo_path, class: 'nav-link' %>
+        <%= link_to new_photo_path, class: "btn btn-primary" do %>
+          <i class="icon ion-plus-round"></i> New Photo
+        <% end %>
       </li>
-
-      <li class="nav-item">
-        <%= link_to "Мои друзья", profiles_my_subscribers_path, class: 'nav-link' %>
-      </li>
-
+      
       <li class="nav-item">
         <%= link_to "Все пользователи", profiles_all_users_path, class: 'nav-link' %>
       </li>
@@ -30,14 +26,34 @@
       <li class="nav-item">
         <%= link_to "Фотографии друзей", profiles_my_subscribers_photo_path, class: 'nav-link' %>
       </li>
-
-      <li class="nav-item">
-		    <%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-      </li>
     </ul>
+
+
+
+    <ul class="nav navbar-nav float-xs-right">
+
+      <li class="nav-item float-xs-right">
+        <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="ion-person"></i> <%= current_user.name %>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+
+
+          <%= link_to "Мой аккаунт", edit_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to "Мои друзья", profiles_my_subscribers_path, class: 'dropdown-item' %>
+          <%= link_to "Мои фотографии", profiles_my_photo_path, class: 'dropdown-item' %>
+          
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+
+        </div>
+      </div>
+      </li>
+
+    </ul>
+
+
 
   </div>
   </div>
@@ -55,7 +71,7 @@
   <div class="container">
   <div class="collapse navbar-toggleable-md" id="navbarResponsive">
     
-    <%= link_to 'Russian Winter Tour 2017', root_path, class: 'navbar-brand text-logo landing-logo' %>
+    <%= link_to link_to t('logo_title'), root_path, class: 'navbar-brand text-logo landing-logo' %>
     
     <ul class="nav navbar-nav float-xs-right">
       <li class="nav-item">

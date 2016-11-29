@@ -6,19 +6,15 @@
           </div>
         <div class="card-block">
         
-        <a href="/photos/<%= photo.id %>">
-          <%= image_tag photo.image.url(:medium) %>
-        </a>
+        <div class= "img-container">
+          <%= link_to photo, class: 'photo-link' do %>
+            <%= image_tag photo.image.url(:medium), class: "img" %>
+          <% end %>
+        </div>
 
-          <br/>
+          <br/><br/>
           <%= link_to photo.user.name, profile_path(photo.user) unless photo.user.nil? %><br/><br/>
 
-          <%= link_to 'Show', photo %>
-        
-          <% if photo.user == current_user && user_signed_in? %>
-            | <%= link_to 'Edit', edit_photo_path(photo) %>
-            | <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
         </div>
         </div>
 

@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  lang_name_select: "Language"
+  logo_title: "Winter tour 2017"
+  first_page:
+    title: "Russian winter tour 2017"
+    subtitle: "Legendary trip, which brings many benefits"
+    buttons:
+      sign_up: "Sign up"
+      log_in: "Log in"

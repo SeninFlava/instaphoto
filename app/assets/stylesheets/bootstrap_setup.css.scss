@@ -10,8 +10,9 @@ $card-cap-bg: rgba(255,255,255,0.8);
 $card-bg: rgba(255,255,255,0.7);
 $body-bg: #F2F1EF;
 
-@import "bootstrap";
 
+@import "bootstrap";
+@import 'ionicons';
 
 .devise-form {
 		text-align: left;
@@ -27,13 +28,19 @@ $body-bg: #F2F1EF;
 	display: inline-block;	
 	margin-left: auto;
 	margin-right: auto;	
+
+	min-width: 250px;
 }
 
 .background-contatiner {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	background-size: cover;
 	background-image: url(image_path('background.jpg'))
+}
+
+.photo-link:hover {
+	opacity: 0.5;
 }
 
 .menu-margins-bottom {
@@ -50,7 +57,44 @@ $body-bg: #F2F1EF;
 	background-color: rgba(155,155,155,0.8);
 }
 
+.link-red {
+	text-color: red;
+	color: red;
+}
+
+.img-container {
+	width: 300px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.card-container {
+	width: 500px;
+	height: 350px;
+	overflow: hidden;
+}
+
+.card-header-color1 {
+	background-color: $btn-primary-bg;
+	color: #fff; 
+}
+
+.img {
+	width: 100%;
+}
+
+
+.span-pull-right {
+	float: right;
+}
+
+.span-pull-left {
+	float: left;
+}
+
+
 /*
+
    .bg-grey {
 	background-color: #F2F1EF;
 	height: 100vh;

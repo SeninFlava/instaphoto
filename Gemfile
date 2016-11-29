@@ -30,6 +30,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 
+gem 'ionicons-rails'
 #gem 'bootstrap-sass', '~> 3.3.5'
 
 #gem 'sass-rails', '>= 3.2'
@@ -40,6 +41,10 @@ gem 'devise', '~> 4.2'
 gem 'paperclip', '~>5.0.0'
 
 gem 'aws-sdk', '~> 2.6'
+
+#gem 'rails-i18n'
+gem 'dynamic_form'
+gem 'devise-i18n', '~> 1.1'
 
 group :development do
 	# Use sqlite3 as the database for Active Record

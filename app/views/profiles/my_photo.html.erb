@@ -1,22 +1,27 @@
 
     <% @photos.each do |photo| %>
         <div class="card photo-form">
-          <div class="card-header">
+          <div class="card-header card-header-color1">
             <%= photo.description %>
           </div>
         <div class="card-block">
         
-        <a href="/photos/<%= photo.id %>">
-          <%= image_tag photo.image.url(:medium) %>
-        </a>
+        <div class= "img-container">
+          <%= link_to photo, class: 'photo-link' do %>
+            <%= image_tag photo.image.url(:medium), class: "img" %>
+          <% end %>
+        </div>
+          
+          <br/><br/>
 
-          <br/>
-
-          <%= link_to 'Show', photo %>
         
           <% if photo.user == current_user && user_signed_in? %>
-            | <%= link_to 'Edit', edit_photo_path(photo) %>
-            | <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to edit_photo_path(photo) do %>
+                <i class="ion-edit"></i> Edit
+              <% end %> | 
+              <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-red" do %>
+                <i class="ion-trash-a"></i> Delete
+              <% end %>
           <% end %>
         </div>
         </div>

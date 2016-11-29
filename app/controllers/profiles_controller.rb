@@ -56,7 +56,7 @@ class ProfilesController < ApplicationController
   end
 
   def all_users
-    @users = User.all.paginate(:page => params[:page], :per_page => 2)
+    @users = User.all.paginate(:page => params[:page], :per_page => 10)
   end
 
 

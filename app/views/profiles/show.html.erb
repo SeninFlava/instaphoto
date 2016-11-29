@@ -1,13 +1,14 @@
-<%= @user.id %>
-<%= @user.email %> <br/>
+<h2><%= @user.name %></h2>
+
+<%= @user.email %> <br/><br/>
 
 <% unless current_user.nil? %>
 <% if current_user.id != @user.id %>
   
   <% if current_user.is_friend?(@user) %>
-    <%= link_to "Отписаться", unsubscribe_path(@user.id) %> <br/>
+    <%= link_to "Отписаться", unsubscribe_path(@user.id), class: "btn btn-warning" %> <br/><br/>
   <% else %>
-    <%= link_to "Подписаться", subscribe_path(@user.id) %> <br/>
+    <%= link_to "Подписаться", subscribe_path(@user.id), class: "btn btn-primary" %> <br/><br/>
   <% end %>
 
 <% end %>
@@ -20,19 +21,29 @@
           </div>
         <div class="card-block">
         
-        <a href="/photos/<%= photo.id %>">
-          <%= image_tag photo.image.url(:medium) %>
-        </a>
+        <div class= "img-container">
+          <%= link_to photo, class: 'photo-link' do %>
+            <%= image_tag photo.image.url(:medium), class: "img" %>
+          <% end %>
+        </div>
+
 
           <br/>
           <%= photo.user.name unless photo.user.nil? %><br/><br/>
-
-          <%= link_to 'Show', photo %>
         
           <% if photo.user == current_user && user_signed_in? %>
-            | <%= link_to 'Edit', edit_photo_path(photo) %>
-            | <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+            
+            <span class="span-pull-right">
+              <%= link_to edit_photo_path(photo) do %>
+                <i class="ion-edit"></i> Edit
+              <% end %> | 
+              <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-red" do %>
+                <i class="ion-trash-a"></i> Delete
+              <% end %>
+            </span>
+
           <% end %>
+          
         </div>
         </div>
 

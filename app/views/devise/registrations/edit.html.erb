@@ -43,6 +43,13 @@
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label t('lang_name_select') %><br />
+    <%= f.select(:lang, [["Russian","ru"],["English","en"]], { include_blank: false , selected: current_user.lang }, {class: 'form-control'}) %>
+    <!--%= f.text_field :lang, class: "form-control" %-->
+    <!--%= f.select :lang, options_for_select([["Russian","ru"],["English","en"]], current_user.lang), {}, {required: 'true', class: 'form-control'}  %-->
+  </div>
+
   <div class="actions">
     <%= f.submit "Изменить", class: "btn btn-primary" %>
   </div>

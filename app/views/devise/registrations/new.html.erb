@@ -30,6 +30,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label t('lang_name_select') %><br />
+    <%= f.select(:lang, [["Russian","ru"],["English","en"]], { include_blank: false , selected: I18n.locale }, {class: 'form-control'}) %>
+    <!--%= f.select :lang, options_for_select([["Russian","ru"],["English","en"]], I18n.locale), {}, {required: 'true', class: 'form-control' }  %-->
+  </div>
+
   <div class="actions">
     <%= f.submit "Зарегистрироваться", class: "btn btn-primary" %>
   </div>

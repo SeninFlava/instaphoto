@@ -4,14 +4,14 @@
 <% else %>
 
 <div class="jumbotron jumbotron-landing">
-  <h1 class="display-3">Russian Winter Tour 2017</h1>
-  <p class="lead">Присоединяйся! Этот тур принесет максимум пользы.</p>
+  <h1 class="display-3"><%= t('first_page.title') %></h1>
+  <p class="lead"><%= t('first_page.subtitle') %></p>
   <hr class="my-2">
   
   <p class="lead">
     
-     <a class="btn btn-primary" href="<%= new_user_registration_path %>" role="button">Регистрация</a>
-     <%= link_to "Войти", new_user_session_path, class: "btn btn-warning" %>    
+     <a class="btn btn-primary" href="<%= new_user_registration_path %>" role="button"><%= t('first_page.buttons.sign_up') %></a>
+     <%= link_to t('first_page.buttons.log_in'), new_user_session_path, class: "btn btn-warning" %>    
 
     <!--a class="btn btn-warning" href="#" role="button">Войти</a-->
   </p>
